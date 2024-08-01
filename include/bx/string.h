@@ -42,13 +42,6 @@ namespace bx
 		///
 		constexpr const char* getCPtr() const;
 
-		///
-		void clear();
-
-		/// Returns `true` if string is empty.
-		///
-		bool isEmpty() const;
-
 	private:
 		const char* m_ptr;
 		int32_t     m_len;

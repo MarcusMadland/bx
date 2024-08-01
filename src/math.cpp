@@ -533,6 +533,35 @@ namespace bx
 		_result[15] = 1.0f;
 	}
 
+	void mtxSRT(float* _result, float _sx, float _sy, float _sz, float _qx, float _qy, float _qz, float _qw, float _tx, float _ty, float _tz)
+	{
+		Quaternion q = { _qx, _qy, _qz, _qw };
+		q = normalize(q);
+
+		float rotationMatrix[16];
+		mtxFromQuaternion(rotationMatrix, q);
+
+		_result[0] = rotationMatrix[0] * _sx;
+		_result[1] = rotationMatrix[1] * _sx;
+		_result[2] = rotationMatrix[2] * _sx;
+		_result[3] = 0.0f;
+
+		_result[4] = rotationMatrix[4] * _sy;
+		_result[5] = rotationMatrix[5] * _sy;
+		_result[6] = rotationMatrix[6] * _sy;
+		_result[7] = 0.0f;
+
+		_result[8] = rotationMatrix[8] * _sz;
+		_result[9] = rotationMatrix[9] * _sz;
+		_result[10] = rotationMatrix[10] * _sz;
+		_result[11] = 0.0f;
+
+		_result[12] = _tx;
+		_result[13] = _ty;
+		_result[14] = _tz;
+		_result[15] = 1.0f;
+	}
+
 	void mtx3Inverse(float* _result, const float* _a)
 	{
 		const float xx = _a[0];

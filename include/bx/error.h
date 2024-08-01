@@ -48,7 +48,7 @@ namespace bx
 		void reset();
 
 		///
-		void setError(ErrorResult _errorResult, const StringLiteral& _msg, const Location& _location = Location::current() );
+		void setError(ErrorResult _errorResult, const StringView& _msg);
 
 		///
 		bool isOk() const;
@@ -57,10 +57,7 @@ namespace bx
 		ErrorResult get() const;
 
 		///
-		const StringLiteral& getMessage() const;
-
-		///
-		const Location& getLocation() const;
+		const StringView& getMessage() const;
 
 		///
 		bool operator==(const ErrorResult& _rhs) const;
@@ -69,13 +66,12 @@ namespace bx
 		bool operator!=(const ErrorResult& _rhs) const;
 
 	private:
-		Location      m_location;
-		StringLiteral m_msg;
-		uint32_t      m_code;
+		StringView m_msg;
+		uint32_t   m_code;
 	};
 
 	/// Do nothing even if error is set.
-	class ErrorIgnore final : public Error
+	class ErrorIgnore : public Error
 	{
 	public:
 		///
@@ -83,7 +79,7 @@ namespace bx
 	};
 
 	/// In debug build assert if error is set.
-	class ErrorAssert final : public Error
+	class ErrorAssert : public Error
 	{
 	public:
 		///
@@ -94,7 +90,7 @@ namespace bx
 	};
 
 	/// Exit application if error is set.
-	class ErrorFatal final : public Error
+	class ErrorFatal : public Error
 	{
 	public:
 		///
@@ -114,17 +110,17 @@ namespace bx
 
 	public:
 		///
-		ErrorScope(Error* _err, const StringLiteral& _name);
+		ErrorScope(Error* _err, const StringView& _name);
 
 		///
 		~ErrorScope();
 
 		///
-		const StringLiteral& getName() const;
+		const StringView& getName() const;
 
 	private:
 		Error* m_err;
-		const StringLiteral m_name;
+		const StringView m_name;
 	};
 
 } // namespace bx

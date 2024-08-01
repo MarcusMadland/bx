@@ -538,6 +538,7 @@ namespace bx
 			;_it.pos < MaxCapacityT && kInvalidHandle == m_handle[_it.pos]
 			; ++_it.pos
 			);
+
 		_it.handle = m_handle[_it.pos];
 		++_it.pos;
 		--_it.num;

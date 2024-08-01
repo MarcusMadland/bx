@@ -719,6 +719,21 @@ namespace bx
 		);
 
 	///
+	void mtxSRT(
+		float* _result,
+		float _sx,
+		float _sy,
+		float _sz,
+		float _qx,
+		float _qy,
+		float _qz,
+		float _qw,
+		float _tx,
+		float _ty,
+		float _tz
+	);
+
+	///
 	Vec3 mul(const Vec3& _vec, const float* _mat);
 
 	///
