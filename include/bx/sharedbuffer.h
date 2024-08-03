@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 Marcus Madland. All rights reserved.
+ * License: https://github.com/marcusmadland/max/blob/main/LICENSE
+ */
+
 #ifndef BX_SHARED_BUFFER_H_HEADER_GUARD
 #define BX_SHARED_BUFFER_H_HEADER_GUARD
 
