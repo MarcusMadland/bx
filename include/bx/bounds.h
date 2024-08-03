@@ -1,6 +1,6 @@
 /*
  * Copyright 2011-2024 Branimir Karadzic. All rights reserved.
- * License: https://github.com/bkaradzic/bgfx#license-bsd-2-clause
+ * License: https://github.com/bkaradzic/max#license-bsd-2-clause
  */
 
 #ifndef BX_BOUNDS_H_HEADER_GUARD
